@@ -4,11 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#006a4e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Oushudh Dam">
 
 <!-- GOOGLE SEO & SOCIAL META TAGS -->
 <title>ঔষধের দাম জানুন | Oushudh Dam Bangladesh — বাংলাদেশের ঔষধের মূল্য ও হেল্পলাইন</title>
 <meta name="description" content="ঔষধ কেনার আগে আসল দাম জেনে নিন! বাংলাদেশের হাজার হাজার ঔষধের খুচরা মূল্য (MRP), জেনেরিক, কোম্পানি এবং জরুরি স্বাস্থ্য ও টেলিমেডিসিন নম্বর এক ঠিকানায়।">
-<meta name="keywords" content="ঔষধের দাম, Bangladesh medicine price, Napa price, Seclo price, Oushudh Dam, 16263 health helpline, DGDA Bangladesh, medicine generic price BD">
+<meta name="keywords" content="ঔষধের দাম, Bangladesh medicine price, Napa price, Seclo price, Oushudh Dam, 16263 health helpline, DGDA Bangladesh, medicine generic price BD, Arogya, Laz Pharma">
 <meta name="author" content="MEHEBUB HASAN SHIMUL">
 <meta name="robots" content="index, follow">
 
@@ -299,6 +303,31 @@ header{
  font-size:13.5px;
  color:#d1fae5;
  font-weight:500;
+}
+
+.install-btn-wrap{
+ margin-top:22px;
+}
+
+.install-btn{
+ display:inline-flex;
+ align-items:center;
+ gap:8px;
+ background:rgba(255,255,255,.18);
+ border:1px solid rgba(255,255,255,.35);
+ color:#fff;
+ padding:11px 22px;
+ border-radius:12px;
+ font-size:15px;
+ font-weight:700;
+ cursor:pointer;
+ backdrop-filter:blur(6px);
+ transition:.2s;
+}
+
+.install-btn:hover{
+ background:rgba(255,255,255,.28);
+ transform:translateY(-1px);
 }
 
 /* COLORFUL DASHBOARD CARDS */
@@ -693,6 +722,87 @@ header{
 
 .copy-btn:hover{background:#e2e8f0}
 
+/* ONLINE SERVICES GRID */
+.online-grid{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:20px;
+}
+
+.online-card{
+ background:#fff;
+ border:1px solid var(--border);
+ border-radius:var(--radius);
+ padding:22px;
+ box-shadow:var(--shadow-sm);
+ transition:.25s;
+ display:flex;
+ flex-direction:column;
+ justify-content:space-between;
+ border-top:4px solid var(--teal);
+}
+
+.online-card:hover{
+ transform:translateY(-4px);
+ box-shadow:var(--shadow-md);
+}
+
+.online-card.pharmacy-card{
+ border-top-color:var(--bd-green);
+}
+
+.online-card.doctor-card{
+ border-top-color:#1d4ed8;
+}
+
+.online-badge{
+ display:inline-block;
+ font-size:11.5px;
+ font-weight:700;
+ padding:3px 10px;
+ border-radius:20px;
+ background:#ecfdf5;
+ color:var(--bd-green-dark);
+ margin-bottom:10px;
+}
+
+.doctor-card .online-badge{
+ background:#eff6ff;
+ color:#1e40af;
+}
+
+.online-card h3{
+ font-size:19px;
+ color:var(--navy);
+ font-weight:700;
+ margin-bottom:6px;
+}
+
+.online-card p{
+ font-size:14px;
+ color:var(--muted);
+ margin-bottom:14px;
+}
+
+.online-link{
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ gap:6px;
+ background:linear-gradient(135deg,var(--bd-green),var(--teal));
+ color:#fff;
+ padding:10px 16px;
+ border-radius:10px;
+ font-size:14px;
+ font-weight:600;
+ transition:.2s;
+}
+
+.online-link:hover{
+ filter:brightness(1.08);
+ transform:translateY(-1px);
+}
+
 /* EMPTY & LOADER */
 .no-results{
  text-align:center;
@@ -834,6 +944,18 @@ footer a:hover{color:#5eead4}
  color:#4ade80;
 }
 
+.dev-credit a{
+ display:inline;
+ color:#60a5fa;
+ margin-left:6px;
+ font-weight:600;
+}
+
+.dev-credit a:hover{
+ color:#93c5fd;
+ text-decoration:underline;
+}
+
 .disclaimer{
  border-top:1px solid rgba(255,255,255,.12);
  margin-top:34px;
@@ -943,7 +1065,7 @@ footer a:hover{color:#5eead4}
 /* RESPONSIVE */
 @media(max-width:1024px){
  .dashboard-grid{grid-template-columns:repeat(2,1fr)}
- .medicine-grid,.doctor-grid{grid-template-columns:repeat(2,1fr)}
+ .medicine-grid,.doctor-grid,.online-grid{grid-template-columns:repeat(2,1fr)}
 }
 
 @media(max-width:680px){
@@ -970,7 +1092,7 @@ footer a:hover{color:#5eead4}
  .dashboard-grid{grid-template-columns:1fr 1fr;gap:12px;margin-top:-32px}
  .dash-card{padding:15px}
  .dash-card strong{font-size:20px}
- .medicine-grid,.doctor-grid,.steps{grid-template-columns:1fr}
+ .medicine-grid,.doctor-grid,.online-grid,.steps{grid-template-columns:1fr}
  .section{padding:44px 0}
  .section-title h2{font-size:24px}
  .footer-grid{grid-template-columns:1fr;gap:24px}
@@ -999,6 +1121,7 @@ footer a:hover{color:#5eead4}
    <a href="#">হোম</a>
    <a href="#medicines">ঔষধ খুঁজুন</a>
    <a href="#doctors">হেল্পলাইন ও ডাক্তার</a>
+   <a href="#online-services">অনলাইন সার্ভিস</a>
    <a href="#pharmacy">সচেতনতা</a>
    <a href="#contact">যোগাযোগ</a>
    <a href="#medicines" class="nav-btn">দাম যাচাই</a>
@@ -1025,6 +1148,12 @@ footer a:hover{color:#5eead4}
    <input type="search" id="searchInput"
     placeholder="ঔষধের নাম, জেনেরিক বা কোম্পানি লিখুন... যেমন: Napa, Seclo, Omeprazole">
    <button type="button" onclick="triggerSearch()">🔍 খুঁজুন</button>
+  </div>
+
+  <div class="install-btn-wrap">
+   <button type="button" class="install-btn" id="installBtn" onclick="installApp()">
+    📲 অ্যাপ ইন্সটল করুন (Web App)
+   </button>
   </div>
 
   <div class="hero-note">🇧🇩 বাংলাদেশ থিম • কালারফুল ড্যাশবোর্ড • তাৎক্ষণিক সার্চ • পাবলিক হেল্পলাইন</div>
@@ -1117,6 +1246,76 @@ footer a:hover{color:#5eead4}
   </div>
  </section>
 
+ <!-- ONLINE DOCTORS & PHARMACIES -->
+ <section class="section" id="online-services" style="padding-top:10px;">
+  <div class="container">
+   <div class="section-title">
+    <div>
+     <h2>🌐 অনলাইন ডাক্তার ও ফার্মেসি</h2>
+     <p>বাসায় বসে ডাক্তারের পরামর্শ ও ঔষধ অর্ডার করুন</p>
+    </div>
+   </div>
+
+   <div class="online-grid">
+    <!-- Online Doctors -->
+    <article class="online-card doctor-card">
+     <div>
+      <span class="online-badge">🩺 অনলাইন ডাক্তার</span>
+      <h3>স্বাস্থ্য বাতায়ন টেলিমেডিসিন</h3>
+      <p>সরকারি ২৪/৭ ডাক্তার পরামর্শ। ফোন করে সরাসরি কথা বলুন।</p>
+     </div>
+     <a class="online-link" href="tel:16263">📞 ১৬২৬৩ এ কল করুন</a>
+    </article>
+
+    <article class="online-card doctor-card">
+     <div>
+      <span class="online-badge">🩺 অনলাইন ডাক্তার</span>
+      <h3>প্রিয়ো (Praava) / অন্যান্য টেলিমেডিসিন</h3>
+      <p>ভিডিও কলের মাধ্যমে বিশেষজ্ঞ ডাক্তারের পরামর্শ নিন।</p>
+     </div>
+     <a class="online-link" href="https://www.google.com/search?q=online+doctor+bangladesh" target="_blank" rel="noopener noreferrer">🔍 খুঁজে দেখুন</a>
+    </article>
+
+    <article class="online-card doctor-card">
+     <div>
+      <span class="online-badge">🩺 অনলাইন ডাক্তার</span>
+      <h3>জাতীয় মানসিক স্বাস্থ্য হেল্পলাইন</h3>
+      <p>মানসিক স্বাস্থ্য ও কাউন্সেলিং সহায়তা পান।</p>
+     </div>
+     <a class="online-link" href="tel:09611677777">📞 কল করুন</a>
+    </article>
+
+    <!-- Online Pharmacies -->
+    <article class="online-card pharmacy-card">
+     <div>
+      <span class="online-badge">💊 অনলাইন ফার্মেসি</span>
+      <h3>আরোগ্য (Arogya)</h3>
+      <p>অনলাইনে ঔষধ অর্ডার করুন। হোম ডেলিভারি সুবিধা।</p>
+     </div>
+     <a class="online-link" href="https://www.google.com/search?q=Arogya+online+pharmacy+Bangladesh" target="_blank" rel="noopener noreferrer">🌐 আরোগ্য ভিজিট করুন</a>
+    </article>
+
+    <article class="online-card pharmacy-card">
+     <div>
+      <span class="online-badge">💊 অনলাইন ফার্মেসি</span>
+      <h3>লাজ ফার্মা (Laz Pharma)</h3>
+      <p>বিশ্বস্ত অনলাইন ফার্মেসি থেকে ঔষধ কিনুন।</p>
+     </div>
+     <a class="online-link" href="https://www.google.com/search?q=Laz+Pharma+online+Bangladesh" target="_blank" rel="noopener noreferrer">🌐 লাজ ফার্মা ভিজিট করুন</a>
+    </article>
+
+    <article class="online-card pharmacy-card">
+     <div>
+      <span class="online-badge">💊 অনলাইন ফার্মেসি</span>
+      <h3>অন্যান্য অনলাইন ফার্মেসি</h3>
+      <p>ePharma, Arogga ইত্যাদি থেকেও অর্ডার করতে পারেন।</p>
+     </div>
+     <a class="online-link" href="https://www.google.com/search?q=online+pharmacy+Bangladesh" target="_blank" rel="noopener noreferrer">🔍 আরও খুঁজুন</a>
+    </article>
+   </div>
+  </div>
+ </section>
+
  <!-- SAFETY WARNING -->
  <section class="container" id="pharmacy">
   <div class="warning">
@@ -1182,6 +1381,7 @@ footer a:hover{color:#5eead4}
     </p>
     <div class="dev-credit">
      Developed by <span>MEHEBUB HASAN SHIMUL</span>
+     <a href="https://www.facebook.com/shimul.khan.5494" target="_blank" rel="noopener noreferrer">📘 Facebook</a>
     </div>
    </div>
 
@@ -1190,6 +1390,7 @@ footer a:hover{color:#5eead4}
     <a href="#">হোম</a>
     <a href="#medicines">ঔষধ খুঁজুন</a>
     <a href="#doctors">হেল্পলাইন ও ডাক্তার</a>
+    <a href="#online-services">অনলাইন সার্ভিস</a>
     <a href="#pharmacy">নকল ঔষধ সতর্কতা</a>
    </div>
 
@@ -1225,6 +1426,7 @@ footer a:hover{color:#5eead4}
 =====================================================================
 OUSHUDH DAM BANGLADESH - PROFESSIONAL EDITION
 Developer: MEHEBUB HASAN SHIMUL
+Facebook: https://www.facebook.com/shimul.khan.5494
 Local JSON Database: ./all_medicines_summary.json
 =====================================================================
 */
@@ -1289,6 +1491,35 @@ let currentPage = 1;
 const PAGE_SIZE = 18;
 let isUsingLocalJson = false;
 let searchDebounce = null;
+let deferredPrompt = null;
+
+/* PWA INSTALL */
+window.addEventListener('beforeinstallprompt', (e) => {
+ e.preventDefault();
+ deferredPrompt = e;
+ const btn = document.getElementById('installBtn');
+ if (btn) btn.style.display = 'inline-flex';
+});
+
+function installApp() {
+ if (deferredPrompt) {
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then((choiceResult) => {
+   if (choiceResult.outcome === 'accepted') {
+    showToast('অ্যাপ ইন্সটল শুরু হয়েছে!');
+   }
+   deferredPrompt = null;
+  });
+ } else {
+  // Fallback instruction for browsers that don't support beforeinstallprompt
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+  if (isIOS) {
+   showToast('Safari এ Share → Add to Home Screen চাপুন');
+  } else {
+   showToast('ব্রাউজার মেনু থেকে "Install App" বা "Add to Home screen" নির্বাচন করুন');
+  }
+ }
+}
 
 /* RENDER PUBLIC HELPLINES */
 function renderHelplines() {
@@ -1458,7 +1689,7 @@ function renderMedicines(append = false) {
 
      <h3>
       ${escapeHtml(m.name)}
-      ${m.strength ? `<span class="strength-tag">${escapeHtml(m.strength)}</span>` : ""}
+      \( {m.strength ? `<span class="strength-tag"> \){escapeHtml(m.strength)}</span>` : ""}
      </h3>
 
      <div class="generic">Generic: ${escapeHtml(m.generic)}</div>
@@ -1552,7 +1783,7 @@ function showDetails(index) {
 
  document.getElementById("modalBody").innerHTML = `
   <div style="font-size:38px;margin-bottom:6px;">💊</div>
-  <h2>${escapeHtml(m.name)} ${m.strength ? `<span class="strength-tag">${escapeHtml(m.strength)}</span>` : ""}</h2>
+  <h2>${escapeHtml(m.name)} \( {m.strength ? `<span class="strength-tag"> \){escapeHtml(m.strength)}</span>` : ""}</h2>
   <p><b>Generic নাম:</b> ${escapeHtml(m.generic)}</p>
   <p><b>প্রস্তুতকারক কোম্পানি:</b> ${escapeHtml(m.company)}</p>
   <p><b>ডোজ ফর্ম / ধরন:</b> ${escapeHtml(m.dosageForm)}</p>
@@ -1577,7 +1808,7 @@ function shareMedicine(index) {
  const m = filteredMedicines[index];
  if (!m) return;
 
- const shareText = `💊 ${m.name}${m.strength ? " " + m.strength : ""} (${m.generic}) — মূল্য: ${m.price} | Oushudh Dam BD`;
+ const shareText = `💊 \( {m.name} \){m.strength ? " " + m.strength : ""} (${m.generic}) — মূল্য: ${m.price} | Oushudh Dam BD`;
  const pageURL = window.location.href.split("#")[0];
 
  if (navigator.share) {
